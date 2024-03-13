@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 services:
     express:
       container_name: pwa-express
@@ -9,7 +9,7 @@ services:
         - '-c'
         - 'npm install && npm start'
       ports:
-        - '3000:3000'
+        - '3001:3001'
       volumes:
         - './src:/home/node/app'
     react:
@@ -18,6 +18,7 @@ services:
         context: ./react-pwa
         dockerfile: Dockerfile
       ports:
-        - '3001:3001'
+        - '3000:3000'
       volumes:
         - './react-pwa:/home/node/app'
+        - '/home/node/app/node_modules'

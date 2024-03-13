@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
+  const [score, setScore] = useState({ team1: 0, team2: 0})
+    useEffect(() => {
+    fetch('http://localhost:3001/score')
+      .then(response => response.json())
+      .then(data => {
+        setScore(data);
+        console.log(data); // Log the score
+      })
+      .catch(error => console.error('Error:', error))
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Team 1 Score: {score.team1}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          Team 2 Score: {score.team2}
+        </p>
+      </div>
     </div>
   );
 }
