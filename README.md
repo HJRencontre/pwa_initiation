@@ -1,5 +1,5 @@
 # Initiation to PWA with React
-## Introduciton
+## Introduction
 - Learning how PWA works and how to implement it with React.
 ## Installation
 1. At the root of the project, run 'docker compose up'.
