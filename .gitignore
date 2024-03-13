@@ -4,3 +4,4 @@ node_modules/
 src/node_modules
 front/icons
 react-pwa/node_modules
+.DS_Store
