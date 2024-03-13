@@ -1,6 +1,10 @@
 # Initiation to PWA with React
-## Introduciton
+## Introduction
 - Learning how PWA works and how to implement it with React.
+## Requirements
+- Docker;
+- A web browser;
+- An internet connection at least once.
 ## Installation
 1. At the root of the project, run 'docker compose up'.
 2. Open your browser and go to 'localhost:3000'.
