@@ -20,5 +20,9 @@ services:
       ports:
         - '3000:3000'
       volumes:
-        - './react-pwa:/home/node/app'
-        - '/home/node/app/node_modules'
+        - './react-pwa:/app'
+        - '/app/node_modules'
+      environment:
+        - CHOKIDAR_USEPOLLING=true
+      stdin_open: true
+      tty: true

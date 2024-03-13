@@ -1,7 +1,7 @@
-FROM node:latest
-WORKDIR /home/node/app
-ENV PATH /home/node/app/node_modules/.bin:$PATH
+FROM node:alpine
+WORKDIR /app
 COPY package*.json ./
-RUN npm i
+RUN npm install
 COPY . ./
-CMD ["npm start"]
+EXPOSE 3000
+CMD ["npm", "start"]

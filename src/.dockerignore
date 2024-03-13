@@ -1,5 +1,0 @@
-.git
-.dockerignore
-./compose.yml
-./react-pwa/Dockerfile
-./react-pwa/node_modules
