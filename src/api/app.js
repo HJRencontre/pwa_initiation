@@ -11,7 +11,7 @@ let score = { team1: 0, team2: 0 };
 setInterval(() => {
     let team = Math.floor(Math.random() * 2) + 1;
     score[`team${team}`]++;
-}, 10000);
+}, 5000);
 
 server.use(express.urlencoded());
 server.use(express.json());
