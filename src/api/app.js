@@ -1,6 +1,6 @@
 const express = require('express');
 const hostname = '0.0.0.0';
-const port = 3000;
+const port = 3001;
 const server = express();
 const cors = require('cors')
 
@@ -11,7 +11,7 @@ let score = { team1: 0, team2: 0 };
 setInterval(() => {
     let team = Math.floor(Math.random() * 2) + 1;
     score[`team${team}`]++;
-}, 10000);
+}, 5000);
 
 server.use(express.urlencoded());
 server.use(express.json());
