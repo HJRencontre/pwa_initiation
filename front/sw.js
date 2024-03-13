@@ -10,7 +10,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(PREFIX);
-      await cache.addAll([...CACHED_FILES, "/offline.html"]);
+      await cache.addAll([...CACHED_FILES, "/index.html"]);
     })()
   );
   console.log(`${PREFIX} Install`);
@@ -49,7 +49,7 @@ self.addEventListener("fetch", (event) => {
           return await fetch(event.request);
         } catch (e) {
           const cache = await caches.open(PREFIX);
-          return await cache.match("./offline.html");
+          return await cache.match("./index.html");
         }
       })()
     );

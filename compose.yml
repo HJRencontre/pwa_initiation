@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-    node:
-      container_name: pwa-initiation
+    express:
+      container_name: pwa-express
       image: 'node:latest'
       working_dir: /home/node/app
       command:
@@ -12,3 +12,12 @@ services:
         - '3000:3000'
       volumes:
         - './src:/home/node/app'
+    react:
+      container_name: pwa-react
+      build:
+        context: ./react-pwa
+        dockerfile: Dockerfile
+      ports:
+        - '3001:3001'
+      volumes:
+        - './react-pwa:/home/node/app'
